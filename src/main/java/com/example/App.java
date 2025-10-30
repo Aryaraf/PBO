@@ -9,8 +9,9 @@ public class App
     public static void main( String[] args )
     {
         try {
-            Mahasiswa mhs = new Mahasiswa("Arya", "123456", "Teknik Informatika");
+            Mahasiswa mhs = new Mahasiswa("Arya", "123456", "Teknik Informatika", 20);
             mhs.tampilkanInfo();
+            mhs.setUmur(20);
         } catch (IllegalArgumentException e) {
             System.out.println("Error:" + e.getMessage());
         }
