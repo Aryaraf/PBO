@@ -8,6 +8,13 @@ public class App
 {
     public static void main( String[] args )
     {
+        try {
+            Mahasiswa mhs = new Mahasiswa("Arya", "123456", "");
+            mhs.tampilkanInfo();
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error:" + e.getMessage());
+        }
+
         // MataKuliah matkul = new MataKuliah("TIF", "Pemrograman Berorientasi Objek", 3);
         
         // // Menampilkan informasi mata kuliah
@@ -27,30 +34,30 @@ public class App
         // mhs3.displayInfo();
 
 
-        Perpustakaan perpustakaan = new Perpustakaan("Perpustakaan Kampus");
+        // Perpustakaan perpustakaan = new Perpustakaan("Perpustakaan Kampus");
 
-        Buku buku1 = new Buku("123", "PBO", "John Doe");
-        Buku buku2 = new Buku("456", "Struktur Data", "Asep");
-        Buku buku3 = new Buku("789", "Basis Data", "Komar");
+        // Buku buku1 = new Buku("123", "PBO", "John Doe");
+        // Buku buku2 = new Buku("456", "Struktur Data", "Asep");
+        // Buku buku3 = new Buku("789", "Basis Data", "Komar");
         
-        perpustakaan.tambahBuku(buku1);
-        perpustakaan.tambahBuku(buku2);
-        perpustakaan.tambahBuku(buku3);
+        // perpustakaan.tambahBuku(buku1);
+        // perpustakaan.tambahBuku(buku2);
+        // perpustakaan.tambahBuku(buku3);
 
-        perpustakaan.tampilkanKoleksiBuku();
+        // perpustakaan.tampilkanKoleksiBuku();
 
-        System.out.println("------------------------------");
-        System.out.println("Proses Peminjaman Buku");
-        System.out.println("------------------------------");
+        // System.out.println("------------------------------");
+        // System.out.println("Proses Peminjaman Buku");
+        // System.out.println("------------------------------");
 
-        perpustakaan.pinjamBuku("A001", "123");
-        perpustakaan.pinjamBuku("A002", "123");
-        perpustakaan.pinjamBuku("A001", "999");
-        perpustakaan.pinjamBuku("A002", "456");
+        // perpustakaan.pinjamBuku("A001", "123");
+        // perpustakaan.pinjamBuku("A002", "123");
+        // perpustakaan.pinjamBuku("A001", "999");
+        // perpustakaan.pinjamBuku("A002", "456");
 
-        perpustakaan.tampilkanKoleksiBuku();
+        // perpustakaan.tampilkanKoleksiBuku();
 
-        perpustakaan.tampilkanLogPeminjaman();
+        // perpustakaan.tampilkanLogPeminjaman();
 
     }
 }
