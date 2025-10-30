@@ -16,10 +16,7 @@ public class App
             String[] skills = {"Java", "Python"};
             Mahasiswa mhs = new Mahasiswa("Arya", "123456", "Teknik Informatika", 20, tgl, skills);
             mhs.tampilkanInfo();
-
-            String[] externalSkills = mhs.getSkills();
-            externalSkills[0] = "Hacked";
-            System.out.println("Skills setelah perubahan luar: " + Arrays.toString(mhs.getSkills()));
+            mhs.setNama("Arya123");
         } catch (IllegalArgumentException e) {
             System.out.println("Error:" + e.getMessage());
         }

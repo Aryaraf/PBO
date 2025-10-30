@@ -28,6 +28,9 @@ public class Mahasiswa {
         if (nama == null || nama.trim().isEmpty()) {
             throw new IllegalArgumentException("Nama tidak boleh kosong");
         }
+        if (nama.matches("[a-zA-Z\\s]+")){
+            throw new IllegalArgumentException("Nama hanya boleh mengandung huruf");
+        }
         this.nama = nama;
     }
 
@@ -46,6 +49,9 @@ public class Mahasiswa {
     public void setJurusan(String jurusan) {
         if (jurusan == null || jurusan.trim().isEmpty()) {
             throw new IllegalArgumentException("Jurusan tidak boleh kosong");
+        }
+        if (jurusan.length() < 3) {
+            throw new IllegalArgumentException("Jurusan minimal 3 karakter");
         }
         this.jurusan = jurusan;
     }
