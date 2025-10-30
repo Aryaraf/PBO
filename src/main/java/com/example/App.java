@@ -16,7 +16,6 @@ public class App
             String[] skills = {"Java", "Python"};
             Mahasiswa mhs = new Mahasiswa("Arya", "123456", "Teknik Informatika", 20, tgl, skills);
             mhs.tampilkanInfo();
-            mhs.setNama("Arya123");
         } catch (IllegalArgumentException e) {
             System.out.println("Error:" + e.getMessage());
         }

@@ -28,7 +28,7 @@ public class Mahasiswa {
         if (nama == null || nama.trim().isEmpty()) {
             throw new IllegalArgumentException("Nama tidak boleh kosong");
         }
-        if (nama.matches("[a-zA-Z\\s]+")){
+        if (!nama.matches("[a-zA-Z\\s]+")){
             throw new IllegalArgumentException("Nama hanya boleh mengandung huruf");
         }
         this.nama = nama;
