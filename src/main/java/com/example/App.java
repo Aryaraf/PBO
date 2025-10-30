@@ -1,5 +1,8 @@
 package com.example;
 
+import java.util.Arrays;
+import java.util.Date;
+
 /**
  * Hello world!
  *
@@ -9,9 +12,14 @@ public class App
     public static void main( String[] args )
     {
         try {
-            Mahasiswa mhs = new Mahasiswa("Arya", "123456", "Teknik Informatika", 20);
+            Date tgl = new Date();
+            String[] skills = {"Java", "Python"};
+            Mahasiswa mhs = new Mahasiswa("Arya", "123456", "Teknik Informatika", 20, tgl, skills);
             mhs.tampilkanInfo();
-            mhs.setUmur(20);
+
+            String[] externalSkills = mhs.getSkills();
+            externalSkills[0] = "Hacked";
+            System.out.println("Skills setelah perubahan luar: " + Arrays.toString(mhs.getSkills()));
         } catch (IllegalArgumentException e) {
             System.out.println("Error:" + e.getMessage());
         }

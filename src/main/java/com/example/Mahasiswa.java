@@ -1,17 +1,22 @@
 package com.example;
 import java.util.Date;
+import java.util.Arrays;
 
 public class Mahasiswa {
     private String nama;
     private String nim;
     private String jurusan;
     private int umur;
+    private Date tglLahir;
+    private String[] skills;
 
-    public Mahasiswa(String nama, String nim, String jurusan, int umur) {
+    public Mahasiswa(String nama, String nim, String jurusan, int umur, Date tglLahir, String[] skills) {
         setNama(nama);
         setNim(nim);
         setJurusan(jurusan);
         setUmur(umur);
+        setTglLahir(tglLahir);
+        setSkills(skills);
     }
 
     // Getter dan Setter dengan validasi
@@ -56,11 +61,31 @@ public class Mahasiswa {
         this.umur = umur;
     }
 
+    // Getter dan Setter untuk tglLahir defensive copy
+    public Date getTglLahir() {
+        return tglLahir != null ? new Date(tglLahir.getTime()) : null;
+    }
+    
+    public void setTglLahir(Date tglLahir) {
+        this.tglLahir = tglLahir != null ? new Date(tglLahir.getTime()) : null;
+    }
+
+    // Getter dan Setter untuk skills defensive copy
+    public String[] getSkills() {
+        return skills != null ? Arrays.copyOf(skills, skills.length) : null;
+    }
+
+    public void setSkills(String[] skills) {
+        this.skills = skills != null ? Arrays.copyOf(skills, skills.length) : null;
+    }
+
     public void tampilkanInfo() {
         System.out.println("===== Data Mahasiswa =====");
         System.out.println("Nama: " + this.nama);
         System.out.println("NIM: " + this.nim);
         System.out.println("Jurusan: " + this.jurusan);
         System.out.println("Umur: " + this.umur + " tahun");
+        System.out.println("Tanggal Lahir: " + (tglLahir != null ? tglLahir.toString() : "Tidak ada"));
+        System.out.println("Skills: " + (skills != null ? Arrays.toString(skills) : "Tidak ada"));
     }
 }
